@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
 			}
 		}
 		floofybutton.setOnClickListener {
-			var intent = Intent(this,FloofyActivity::class.java)
+			var intent = Intent(this, FloofyActivity::class.java)
 			startActivity(intent)
-		} 
+		} //I think this is the one from last time..Or is it the adapter one? o
+
 	}
 }

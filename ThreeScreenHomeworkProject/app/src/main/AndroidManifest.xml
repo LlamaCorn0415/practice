@@ -16,9 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="FryScreen"/>
-        <activity android:name="CheeseburgerScreen"/>
-        <activity android:name="PizzaScreen"/>
+        <activity android:name="com.example.hannahroseneill.FryScreen.FryScreen" />
+
+        <activity android:name="com.example.hannahroseneill.CheeseburgerScreen.CheeseburgerScreen" />
+
+        <activity android:name="com.example.hannahroseneill.PizzaScreen.PizzaScreen" />
+
     </application>
 
 </manifest>
