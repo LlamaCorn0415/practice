@@ -11,7 +11,15 @@ import kotlinx.android.synthetic.main.list_item.view.*
  * Created by hannahroseneill on 11/15/17.
  */
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
-	val arrayList = listOf("cat", "guinea pig", "iguana", "dog", "bunny")
+	val animals = ArrayList<Animal>()
+
+	fun add(animal: Animal){
+		animals.add(animal)
+	}
+
+	fun clear(){
+		animals.clear()
+	}
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 		holder.bind(position)
@@ -22,17 +30,21 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 	}
 
 	override fun getItemCount(): Int {
-		return arrayList.size
+		return animals.size
 
 	}
 
 	inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder (itemView) {
-		val button = itemView.button
+		val txtName = itemView.txtName
+		val txtWeight = itemView.txtWeight
 
 		fun bind(position: Int){
-			button.text = arrayList[position]
+			val animal = animals[position]
+			txtName.text = animal.name
+			txtWeight.text = animal.weight.toString()
 		}
 
 	}
 }
+
 
