@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import kotlinx.android.synthetic.main.list_item.view.*
 
 /**
@@ -13,12 +14,20 @@ import kotlinx.android.synthetic.main.list_item.view.*
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 	val animals = ArrayList<Animal>()
 
-	fun add(animal: Animal){
+	fun add(animal: Animal) {
 		animals.add(animal)
 	}
 
-	fun clear(){
+	fun clear() {
 		animals.clear()
+	}
+
+	fun unkill(){
+		animals.add(Animal("Cat", 5.0))
+		animals.add(Animal("Tiger", 200.0))
+		animals.add(Animal("Lion", 300.0))
+		animals.add(Animal("Cheetah", 222.0))
+		animals.add(Animal("Sphynx", 128.0))
 	}
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -26,7 +35,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-		return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false))
+		return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
 	}
 
 	override fun getItemCount(): Int {
@@ -34,11 +43,11 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
 	}
 
-	inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder (itemView) {
+	inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 		val txtName = itemView.txtName
 		val txtWeight = itemView.txtWeight
 
-		fun bind(position: Int){
+		fun bind(position: Int) {
 			val animal = animals[position]
 			txtName.text = animal.name
 			txtWeight.text = animal.weight.toString()
