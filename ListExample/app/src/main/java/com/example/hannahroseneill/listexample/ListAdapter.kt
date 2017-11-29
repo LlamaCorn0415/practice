@@ -22,7 +22,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 		animals.clear()
 	}
 
-	fun unkill(){
+	fun unkill() {
 		animals.add(Animal("Cat", 5.0))
 		animals.add(Animal("Tiger", 400.0))
 		animals.add(Animal("Lion", 300.0))
