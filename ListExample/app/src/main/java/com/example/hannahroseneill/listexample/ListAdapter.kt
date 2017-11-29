@@ -24,10 +24,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
 	fun unkill(){
 		animals.add(Animal("Cat", 5.0))
-		animals.add(Animal("Tiger", 200.0))
+		animals.add(Animal("Tiger", 400.0))
 		animals.add(Animal("Lion", 300.0))
-		animals.add(Animal("Cheetah", 222.0))
-		animals.add(Animal("Sphynx", 128.0))
+		animals.add(Animal("Cheetah", 150.0))
+		animals.add(Animal("Sphynx", 7.0))
 	}
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
