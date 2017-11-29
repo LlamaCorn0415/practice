@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 
+		revive.setVisibility(View.INVISIBLE)
+
 		prepareList()
 
 		adapter.add(Animal("Cat", 5.0))
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 		}
 
-		revive.setOnClickListener{
+		revive.setOnClickListener {
 			adapter.unkill()
 			adapter.notifyDataSetChanged()
 
